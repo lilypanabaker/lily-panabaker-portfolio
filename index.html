@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lily Panabaker — Portfolio</title>
+<meta name="description" content="Lily Panabaker — Product Marketing. Storyteller. Insight-led.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Pinyon+Script&family=Caveat:wght@500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  html, body { margin: 0; background: #4d0f26; }
+  section { scroll-margin-top: 72px; }
+  ::selection { background: #ff85b5; color: #4d0f26; }
+  @keyframes lp-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes lp-rise { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: none; } }
+  @keyframes lp-grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @supports (animation-timeline: view()) {
+    [data-reveal] { animation-name: lp-rise; animation-duration: 1ms; animation-fill-mode: none; animation-timeline: view(); animation-range: entry 2% cover 24%; }
+  }
+  @supports (animation-timeline: scroll()) {
+    #lp-progress { animation: lp-grow linear both; animation-timeline: scroll(root); }
+  }
+  .exp-logo { width: 50px; height: 50px; display: block; margin-bottom: 16px; border-radius: 11px; object-fit: cover; background: rgba(255,133,181,.12); }
+</style>
+</head>
+<body>
+<div style="background:#4d0f26;color:#fbe6ee;font-family:'Hanken Grotesk',sans-serif;overflow-x:hidden;position:relative">
+
+  <!-- scroll progress -->
+  <div id="lp-progress" style="position:fixed;top:0;left:0;height:3px;width:100%;background:#ff85b5;transform:scaleX(0);transform-origin:0 50%;z-index:100"></div>
+
+  <!-- ===== NAV / MASTHEAD ===== -->
+  <div style="position:sticky;top:0;z-index:90;background:rgba(60,10,29,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,133,181,.35)">
+    <div style="max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 32px">
+      <div style="display:flex;align-items:baseline;gap:14px;cursor:pointer" onclick="goTop()">
+        <span style="font-family:'Playfair Display',serif;font-weight:800;font-size:24px;color:#ffeaf2;letter-spacing:.02em">LP</span>
+      </div>
+      <div style="display:flex;gap:30px;font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#e7b9cb">
+        <span style="cursor:pointer" onclick="goAbout()">About</span>
+        <span style="cursor:pointer" onclick="goSkills()">Skills</span>
+        <span style="cursor:pointer" onclick="goExp()">Experience</span>
+        <span style="cursor:pointer;color:#ff85b5" onclick="goContact()">Contact</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== HEADER / HERO ===== -->
+  <section style="position:relative;max-width:1180px;margin:0 auto;padding:0 32px">
+    <div style="position:relative;z-index:1;padding:64px 0 28px;text-align:center">
+      <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(17px,2.2vw,22px);color:#ff9cc2;animation:lp-rise .8s ease both">the portfolio of</div>
+      <h1 style="font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(64px,13vw,168px);line-height:.9;letter-spacing:-.01em;margin:10px 0 0;color:#ffeaf2;animation:lp-rise .9s ease .08s both">Lily<br>Panabaker</h1>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-top:30px;font-family:'Space Grotesk',sans-serif;font-size:clamp(11px,1.3vw,13px);letter-spacing:.18em;text-transform:uppercase;color:#e7b9cb;font-weight:600;animation:lp-rise .9s ease .16s both">
+        <span>Product Marketing</span><span style="color:#ff85b5">✦</span><span>Storyteller</span><span style="color:#ff85b5">✦</span><span>Insight-led</span>
+      </div>
+      <div style="margin-top:40px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;font-family:'Space Grotesk',sans-serif;animation:lp-rise .9s ease .24s both">
+        <span style="cursor:pointer;background:#ff85b5;color:#4d0f26;font-size:14px;font-weight:600;padding:14px 26px;border-radius:99px" onclick="goExp()">View my experience</span>
+        <span style="cursor:pointer;border:1px solid rgba(255,133,181,.5);color:#ffeaf2;font-size:14px;font-weight:600;padding:13px 24px;border-radius:99px" onclick="goContact()">Get in touch</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MARQUEE DIVIDER ===== -->
+  <div style="border-top:1px solid rgba(255,133,181,.35);border-bottom:1px solid rgba(255,133,181,.35);overflow:hidden;padding:14px 0;margin-top:36px">
+    <div style="display:flex;width:max-content;animation:lp-marquee 32s linear infinite;font-family:'Playfair Display',serif;font-style:italic;font-size:22px;color:#ff9cc2">
+      <span style="display:flex;gap:34px;padding-right:34px"><span>Customer Insight</span><span style="opacity:.5">✦</span><span>Campaign Storytelling</span><span style="opacity:.5">✦</span><span>Cross-team Comms</span><span style="opacity:.5">✦</span><span>AI-driven Research</span><span style="opacity:.5">✦</span><span>Brand-aligned Content</span><span style="opacity:.5">✦</span></span>
+      <span aria-hidden="true" style="display:flex;gap:34px;padding-right:34px"><span>Customer Insight</span><span style="opacity:.5">✦</span><span>Campaign Storytelling</span><span style="opacity:.5">✦</span><span>Cross-team Comms</span><span style="opacity:.5">✦</span><span>AI-driven Research</span><span style="opacity:.5">✦</span><span>Brand-aligned Content</span><span style="opacity:.5">✦</span></span>
+    </div>
+  </div>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" style="max-width:1180px;margin:0 auto;padding:96px 32px 80px">
+    <div data-reveal="" style="display:flex;align-items:baseline;gap:18px;margin-bottom:48px">
+      <span style="font-family:'Space Grotesk',sans-serif;font-size:13px;letter-spacing:.2em;color:#ff85b5;font-weight:600">I</span>
+      <span style="height:1px;flex:1;background:rgba(255,133,181,.35)"></span>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#e7b9cb;font-weight:600;margin:0">About</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:0.82fr 1.18fr;gap:56px;align-items:start">
+      <!-- portrait -->
+      <div data-reveal="" style="">
+        <div style="border-radius:200px 200px 14px 14px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.4);border:1px solid rgba(255,133,181,.3)">
+          <img src="assets/lily-headshot.jpg" alt="Lily Panabaker" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:55% 30%;display:block" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div style="display:none;width:100%;aspect-ratio:4/5;align-items:center;justify-content:center;background:linear-gradient(160deg,#5c1330,#3c0a1d)">
+            <span style="font-family:'Playfair Display',serif;font-weight:800;font-size:96px;color:#ff9cc2">LP</span>
+          </div>
+        </div>
+        <div style="margin-top:22px;display:flex;flex-direction:column;gap:12px;font-family:'Space Grotesk',sans-serif">
+          <div style="display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,133,181,.2);padding-bottom:8px"><span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#c98aa3">Currently</span><span style="font-size:13px;color:#ff85b5">Product Marketing @ Crusoe</span></div>
+          <div style="display:flex;justify-content:space-between"><span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#c98aa3">Based in</span><span style="font-size:13px;color:#ffeaf2">Bellevue, WA</span></div>
+        </div>
+      </div>
+      <!-- text -->
+      <div data-reveal="" data-delay="120" style="">
+        <p style="font-family:'Playfair Display',serif;font-size:clamp(24px,3.05vw,35px);line-height:1.22;font-weight:500;color:#ffeaf2;margin:0 0 28px">I work at the intersection of <span style="font-style: italic; color: rgb(255, 156, 194);">marketing, product, and engineering</span> — turning customer insight into messaging that resonates with highly technical audiences.</p>
+        <p style="font-size:17px;line-height:1.7;color:#e0b3c5;margin:0 0 18px"><span style="float: left; font-family: 'Playfair Display', serif; font-size: 62px; line-height: 0.78; font-weight: 700; color: rgb(255, 133, 181); padding: 6px 12px 0px 0px;">R</span>ight now, I'm on the product marketing team at <span style="color: rgb(255, 234, 242); font-weight: 600;">Crusoe</span>, an AI cloud infrastructure company, working on messaging, positioning, and go-to-market content for Crusoe Managed Inference. I work collaboratively across marketing, web, design, digital, and product teams to shape how Managed Inference connects with customers and is brought to market. It's a fast-moving, technical environment that challenges me and is exactly the kind of work I love.</p>
+        <p style="font-size:17px;line-height:1.7;color:#e0b3c5;margin:0">Before Crusoe, I interned with Microsoft's GitHub Learn team, where I supported developer-facing events and built a team-wide event-tracking system. Prior to that, at Zocks Communications, I learned early how to use AI-enabled tools to surface customer insights and translate them into marketing and product recommendations. I prioritize communication, curiosity, and collaboration that enable informed data-driven decisions and GTM content.</p>
+        <div style="margin-top:34px;border-left:2px solid #ff85b5;padding-left:22px">
+          <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:22px;line-height:1.4;color:#ffeaf2;margin:0">"I'm most energized organizing complex projects, collaborating with teams, and connecting products with the people who use them."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" style="background:#430c20;border-top:1px solid rgba(255,133,181,.25);border-bottom:1px solid rgba(255,133,181,.25)">
+    <div style="max-width:1180px;margin:0 auto;padding:96px 32px">
+      <div data-reveal="" style="display:flex;align-items:baseline;gap:18px;margin-bottom:14px">
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:13px;letter-spacing:.2em;color:#ff85b5;font-weight:600">II</span>
+        <span style="height:1px;flex:1;background:rgba(255,133,181,.35)"></span>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#e7b9cb;font-weight:600;margin:0">Skills</h2>
+      </div>
+      <h3 data-reveal="" style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(34px,5.2vw,62px);color:#ffeaf2;margin:0 0 48px;max-width:900px;line-height:1.02;text-wrap:balance">What I bring to a <span style="display:block;font-style:italic;font-weight:500;color:#ff9cc2;font-size:1.16em">marketing team</span></h3>
+
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0">
+        <div data-reveal="" style="border-top:1px solid rgba(255,133,181,.3);padding:28px 36px 36px 0">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.16em;color:#ff85b5;font-weight:600;margin-bottom:10px">01</div>
+          <div style="font-family:'Playfair Display',serif;font-size:26px;font-weight:600;color:#ffeaf2;margin-bottom:12px">Storytelling</div>
+          <p style="font-size:15.5px;line-height:1.6;color:#d99bb0;margin:0">Shaping messaging &amp; positioning frameworks, content creation, and social media strategy into narratives that connect and convert.</p>
+        </div>
+        <div data-reveal="" data-delay="100" style="border-top:1px solid rgba(255,133,181,.3);padding:28px 0 36px 36px;border-left:1px solid rgba(255,133,181,.3)">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.16em;color:#ff85b5;font-weight:600;margin-bottom:10px">02</div>
+          <div style="font-family:'Playfair Display',serif;font-size:26px;font-weight:600;color:#ffeaf2;margin-bottom:12px">Customer-Informed Insights</div>
+          <p style="font-size:15.5px;line-height:1.6;color:#d99bb0;margin:0">Grounding strategy in what customers actually want through market research and analysis, active listening, and SEO.</p>
+        </div>
+        <div data-reveal="" style="border-top:1px solid rgba(255,133,181,.3);padding:28px 36px 36px 0">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.16em;color:#ff85b5;font-weight:600;margin-bottom:10px">03</div>
+          <div style="font-family:'Playfair Display',serif;font-size:26px;font-weight:600;color:#ffeaf2;margin-bottom:12px">Technical Depth</div>
+          <p style="font-size:15.5px;line-height:1.6;color:#d99bb0;margin:0">Experience marketing technical products to technical audiences, using the precise language required to translate complexity into clear value.</p>
+        </div>
+        <div data-reveal="" data-delay="100" style="border-top:1px solid rgba(255,133,181,.3);padding:28px 0 36px 36px;border-left:1px solid rgba(255,133,181,.3)">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.16em;color:#ff85b5;font-weight:600;margin-bottom:10px">04</div>
+          <div style="font-family:'Playfair Display',serif;font-size:26px;font-weight:600;color:#ffeaf2;margin-bottom:12px">Collaboration</div>
+          <p style="font-size:15.5px;line-height:1.6;color:#d99bb0;margin:0">Cross-team coordination, stakeholder communication, and rapport building across marketing, sales, design &amp; product.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TOOLS BAND ===== -->
+  <div data-reveal="" style="text-align:center;padding:54px 0 26px">
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#ff85b5;font-weight:600">Tools</div>
+    <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:18px;color:#e7b9cb;margin-top:6px">the kit I reach for</div>
+  </div>
+  <div style="background:#ff85b5;overflow:hidden;padding:16px 0">
+    <div style="display:flex;width:max-content;align-items:center;animation:lp-marquee 34s linear infinite">
+      <div style="display:flex;align-items:center;gap:56px;padding-right:56px"><img src="assets/logos/figma.png" alt="Figma" style="height:24px;width:auto;display:block;flex:none"><img src="assets/logos/canva.png" alt="Canva" style="height:38px;width:auto;display:block;flex:none"><img src="assets/logos/adobe.png" alt="Adobe" style="height:22px;width:auto;display:block;flex:none"><img src="assets/logos/office365.png" alt="Office 365" style="height:23px;width:auto;display:block;flex:none"><img src="assets/logos/gsuite.png" alt="Google Workspace" style="height:24px;width:auto;display:block;flex:none"><img src="assets/logos/slack.png" alt="Slack" style="height:24px;width:auto;display:block;flex:none"><img src="assets/logos/claude.png" alt="Claude" style="height:23px;width:auto;display:block;flex:none"><img src="assets/logos/openai.png" alt="OpenAI" style="height:20px;width:auto;display:block;flex:none"><img src="assets/logos/notebooklm.png" alt="NotebookLM" style="height:17px;width:auto;display:block;flex:none"></div>
+      <div aria-hidden="true" style="display:flex;align-items:center;gap:56px;padding-right:56px"><img src="assets/logos/figma.png" alt="Figma" style="height:24px;width:auto;display:block;flex:none"><img src="assets/logos/canva.png" alt="Canva" style="height:38px;width:auto;display:block;flex:none"><img src="assets/logos/adobe.png" alt="Adobe" style="height:22px;width:auto;display:block;flex:none"><img src="assets/logos/office365.png" alt="Office 365" style="height:23px;width:auto;display:block;flex:none"><img src="assets/logos/gsuite.png" alt="Google Workspace" style="height:24px;width:auto;display:block;flex:none"><img src="assets/logos/slack.png" alt="Slack" style="height:24px;width:auto;display:block;flex:none"><img src="assets/logos/claude.png" alt="Claude" style="height:23px;width:auto;display:block;flex:none"><img src="assets/logos/openai.png" alt="OpenAI" style="height:20px;width:auto;display:block;flex:none"><img src="assets/logos/notebooklm.png" alt="NotebookLM" style="height:17px;width:auto;display:block;flex:none"></div>
+    </div>
+  </div>
+
+  <!-- ===== EXPERIENCE / SELECTED WORK ===== -->
+  <section id="experience" style="max-width: 1180px; margin: 0 auto; padding: 96px 32px 80px">
+    <div data-reveal="" style="display:flex;align-items:baseline;gap:18px;margin-bottom:56px">
+      <span style="font-family:'Space Grotesk',sans-serif;font-size:13px;letter-spacing:.2em;color:#ff85b5;font-weight:600">III</span>
+      <span style="height:1px;flex:1;background:rgba(255,133,181,.35)"></span>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#e7b9cb;font-weight:600;margin:0">Experience</h2>
+    </div>
+
+    <div data-reveal="" style="margin-bottom:64px;max-width:880px">
+      <h3 style="font-family:'Playfair Display',serif;font-size:clamp(34px,5.2vw,62px);font-weight:700;color:#ffeaf2;margin:0 0 20px;line-height:1.02;text-wrap:balance">Where I've put it <span style="display:block;font-style:italic;font-weight:500;color:#ff9cc2;font-size:1.16em">to practice</span></h3>
+      <p style="font-size:17px;line-height:1.7;color:#e0b3c5;margin:0;max-width:820px;text-wrap:balance">My background spans social media, startup marketing, developer-facing events, and now product marketing for AI infrastructure at Crusoe. Across all of it, I've learned how to turn detailed, highly technical content into messaging that lands and positioning that supports it.</p>
+    </div>
+
+    <div style="display:flex;flex-direction:column">
+      <!-- Crusoe -->
+      <div data-reveal="" style="display:grid;grid-template-columns:0.42fr 1.58fr;gap:40px;padding:34px 0;border-top:1px solid rgba(255,133,181,.3)">
+        <div>
+          <img class="exp-logo" src="assets/experience/crusoe.webp" alt="Crusoe logo">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#ff85b5;font-weight:600">May 2026 – Present</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:13px;color:#c98aa3;margin-top:6px">Bellevue, WA</div>
+        </div>
+        <div>
+          <div style="font-family:'Playfair Display',serif;font-size:clamp(24px,3vw,32px);font-weight:700;color:#ffeaf2;line-height:1.1">Product Marketing Intern</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:14px;color:#ff9cc2;margin-top:4px;letter-spacing:.02em">Crusoe · AI Cloud Infrastructure</div>
+          <ul style="margin:16px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px">
+            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.55;color:#e0b3c5"><span style="color: rgb(255, 133, 181); flex: 0 0 auto;">—</span>Built the messaging &amp; positioning framework for Crusoe Managed Inference from scratch, using primary research to translate complex technical product concepts into a clear and digestible framework.</li>
+            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.55;color:#e0b3c5"><span style="color: rgb(255, 133, 181); flex: 0 0 auto;">—</span>Owned copy updates for the Managed Inference product page, rewriting technical product capabilities into clear value propositions aligned to the new positioning framework.</li>
+            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.55;color:#e0b3c5"><span style="color: rgb(255, 133, 181); flex: 0 0 auto;">—</span>Conducted stakeholder interviews across product and sales to surface technical insights that directly shaped positioning strategy and messaging used in marketing materials.</li>
+            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.55;color:#e0b3c5"><span style="color:#ff85b5;flex:none">—</span>Collaborated across marketing, sales, design &amp; product on go-to-market content and strategy, bridging technical product knowledge with customer-facing messaging.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- GitHub -->
+      <div data-reveal="" style="display:grid;grid-template-columns:0.42fr 1.58fr;gap:40px;padding:34px 0;border-top:1px solid rgba(255,133,181,.3)">
+        <div>
+          <img class="exp-logo" src="assets/experience/github.webp" alt="GitHub logo">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#ff85b5;font-weight:600">May – Aug 2025</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:13px;color:#c98aa3;margin-top:6px">Bellevue, WA</div>
+        </div>
+        <div>
+          <div style="font-family:'Playfair Display',serif;font-size:clamp(24px,3vw,32px);font-weight:700;color:#ffeaf2;line-height:1.1">ACE Events Marketing Intern</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:14px;color:#ff9cc2;margin-top:4px;letter-spacing:.02em">Microsoft · GitHub</div>
+          <ul style="margin:16px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px">
+            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.55;color:#e0b3c5"><span style="color:#ff85b5;flex:none">—</span>Supported the Accreditation, Certification &amp; Enablement (ACE) team within GitHub Learn, aligning event strategy with brand &amp; product goals across developer-facing programming.</li>
+            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.55;color:#e0b3c5"><span style="color: rgb(255, 133, 181); flex: 0 0 auto;">—</span>Built and maintained a team-wide event-tracking system using a multi-tab spreadsheet and Copilot-made GitHub issue templates, kept current across weekly syncs.</li>
+            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.55;color:#e0b3c5"><span style="color:#ff85b5;flex:none">—</span>Co-led planning and logistics for an invite-only developer learning day with 120+ attendees, built around GitHub certification and applied skill attainment.</li>
+            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.55;color:#e0b3c5"><span style="color:#ff85b5;flex:none">—</span>Coordinated logistics, recordings, swag &amp; prizes across 3+ developer-facing events, ensuring smooth execution from planning through post-event delivery.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Pepperdine -->
+      <div data-reveal="" style="display:grid;grid-template-columns:0.42fr 1.58fr;gap:40px;padding:34px 0;border-top:1px solid rgba(255,133,181,.3)">
+        <div>
+          <img class="exp-logo" src="assets/experience/pepperdine.webp" alt="Pepperdine logo">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#ff85b5;font-weight:600">Sep 2024 – Apr 2025</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:13px;color:#c98aa3;margin-top:6px">London</div>
+        </div>
+        <div>
+          <div style="font-family:'Playfair Display',serif;font-size:clamp(24px,3vw,32px);font-weight:700;color:#ffeaf2;line-height:1.1">Social Media Coordinator</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:14px;color:#ff9cc2;margin-top:4px;letter-spacing:.02em">Pepperdine International Programs&nbsp;<span style="letter-spacing: 0.28px;">· London</span></div>
+          <ul style="margin:16px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px">
+            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.55;color:#e0b3c5"><span style="color:#ff85b5;flex:none">—</span>Grew the program's following 21% in 7 months and lifted engagement an average of 15% with original student-abroad content.</li>
+            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.55;color:#e0b3c5"><span style="color:#ff85b5;flex:none">—</span>Managed a student photo-sharing platform, keeping a consistent flow of user-generated content.</li>
+            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.55;color:#e0b3c5"><span style="color:#ff85b5;flex:none">—</span>Partnered with university departments to cross-post and market abroad programs.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Zocks -->
+      <div data-reveal="" style="display:grid;grid-template-columns:0.42fr 1.58fr;gap:40px;padding:34px 0;border-top:1px solid rgba(255,133,181,.3)">
+        <div>
+          <img class="exp-logo" src="assets/experience/zocks.webp" alt="Zocks logo">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#ff85b5;font-weight:600">May – Aug 2024</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:13px;color:#c98aa3;margin-top:6px">Remote · US &amp; Hungary</div>
+        </div>
+        <div>
+          <div style="font-family:'Playfair Display',serif;font-size:clamp(24px,3vw,32px);font-weight:700;color:#ffeaf2;line-height:1.1">Marketing Intern</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:14px;color:#ff9cc2;margin-top:4px;letter-spacing:.02em">Zocks · AI for Advisors</div>
+          <ul style="margin:16px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px">
+            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.55;color:#e0b3c5"><span style="color:#ff85b5;flex:none">—</span>Created customer case studies via interviews and AI-enhanced feedback analysis to inform marketing &amp; sales.</li>
+            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.55;color:#e0b3c5"><span style="color:#ff85b5;flex:none">—</span>Coordinated trade-show planning and logistics across US and Hungary teams, streamlining on-budget execution.</li>
+            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.55;color:#e0b3c5"><span style="color:#ff85b5;flex:none">—</span>Authored and refined video scripts for the CEO and company social accounts, boosting engagement.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Rachel Davis -->
+      <div data-reveal="" style="display:grid;grid-template-columns:0.42fr 1.58fr;gap:40px;padding:34px 0;border-top:1px solid rgba(255,133,181,.3)">
+        <div>
+          <img class="exp-logo" src="assets/experience/racheldavis.webp" alt="Rachel Davis Photography logo">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#ff85b5;font-weight:600">Sep 2022 – May 2023</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:13px;color:#c98aa3;margin-top:6px">Monroe, WA</div>
+        </div>
+        <div>
+          <div style="font-family:'Playfair Display',serif;font-size:clamp(24px,3vw,32px);font-weight:700;color:#ffeaf2;line-height:1.1">Social Media Representative</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:14px;color:#ff9cc2;margin-top:4px;letter-spacing:.02em">Rachel Davis Photography</div>
+          <ul style="margin:16px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px">
+            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.55;color:#e0b3c5"><span style="color:#ff85b5;flex:none">—</span>Marketed services to high-school audiences through targeted posts, boosting inquiries 15%.</li>
+            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.55;color:#e0b3c5"><span style="color:#ff85b5;flex:none">—</span>Joined five content-generating photoshoots to align marketing with brand vision.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- education (centered) -->
+    <div data-reveal="" style="margin-top:48px;display:flex;justify-content:center">
+      <div style="background:#430c20;border:1px solid rgba(255,133,181,.25);border-radius:14px;padding:34px 40px;max-width:780px;width:100%">
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:22px;letter-spacing:.16em;text-transform:uppercase;color:#ff85b5;font-weight:700;margin-bottom:24px;text-align:center">Education</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px">
+          <div>
+            <div style="font-family:'Playfair Display',serif;font-size:21px;font-weight:600;color:#ffeaf2">Boise State University</div>
+            <div style="font-size:14px;color:#ff9cc2;margin-top:3px">BBA, Marketing &amp; Product Management</div>
+            <div style="font-size:13px;color:#c98aa3;margin-top:2px">2025 – Expected 2027</div>
+            <p style="font-size:13.5px;line-height:1.55;color:#d99bb0;margin:10px 0 0">Transferred with junior standing; coursework in data-driven marketing, business analytics, and statistics &amp; storytelling.</p>
+          </div>
+          <div>
+            <div style="font-family:'Playfair Display',serif;font-size:21px;font-weight:600;color:#ffeaf2">Pepperdine University</div>
+            <div style="font-size:14px;color:#ff9cc2;margin-top:3px">BA, Integrated Marketing &amp; Communications</div>
+            <div style="font-size:13px;color:#c98aa3;margin-top:2px">2023 – 2025</div>
+            <p style="font-size:13.5px;line-height:1.55;color:#d99bb0;margin:10px 0 0">Academic year abroad in London focused on global business and cultural communications.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT / FOOTER ===== -->
+  <section id="contact" style="max-width:1180px;margin:0 auto;padding:110px 32px 70px;text-align:center">
+    <div data-reveal="" style="">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#ff85b5;font-weight:600;margin-bottom:18px">Let's work together</div>
+      <h2 style="font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:clamp(48px,9vw,108px);line-height:.95;color:#ffeaf2;margin:0">Say hello!</h2>
+      <a href="mailto:lilypanabaker5@gmail.com" style="display:inline-block;margin-top:34px;font-family:'Playfair Display',serif;font-size:clamp(20px,3vw,30px);color:#ff9cc2;text-decoration:none;border-bottom:1.5px solid #ff85b5;padding-bottom:3px">lilypanabaker5@gmail.com</a>
+      <div style="margin-top:38px">
+        <a href="https://www.linkedin.com/in/lilypanabaker/" target="_blank" rel="noopener" style="display:inline-block;background:#ff85b5;color:#4d0f26;font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;letter-spacing:.04em;padding:15px 30px;border-radius:99px;text-decoration:none">Connect with me on LinkedIn</a>
+      </div>
+      <div style="margin-top:30px;display:flex;gap:18px;justify-content:center;flex-wrap:wrap;font-family:'Space Grotesk',sans-serif;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#e7b9cb">
+        <a href="https://www.linkedin.com/in/lilypanabaker" target="_blank" rel="noopener" style="color:#e7b9cb;text-decoration:none">LinkedIn</a><span style="color:#ff85b5">·</span><a href="assets/Lily-Panabaker-Resume.docx" target="_blank" rel="noopener" style="color:#e7b9cb;text-decoration:none">Résumé</a>
+      </div>
+    </div>
+  </section>
+
+  <div style="border-top:1px solid rgba(255,133,181,.25)">
+    <div style="max-width:1180px;margin:0 auto;padding:26px 32px;display:flex;justify-content:space-between;align-items:center;font-family:'Space Grotesk',sans-serif;font-size:12px;color:#a8718a">
+      <span>© 2026 Lily Panabaker</span>
+      <span style="cursor:pointer;letter-spacing:.1em;text-transform:uppercase" onclick="goTop()">Back to top ↑</span>
+    </div>
+  </div>
+
+</div>
+<script>
+  function scrollToId(id) {
+    var el = document.getElementById(id);
+    if (el) {
+      var y = el.getBoundingClientRect().top + window.pageYOffset - 60;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  }
+  function goTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+  function goAbout() { scrollToId('about'); }
+  function goSkills() { scrollToId('skills'); }
+  function goExp() { scrollToId('experience'); }
+  function goContact() { scrollToId('contact'); }
+
+  var progress = document.getElementById('lp-progress');
+  function updateProgress() {
+    var doc = document.documentElement;
+    var scrollTop = window.pageYOffset || doc.scrollTop;
+    var height = doc.scrollHeight - doc.clientHeight;
+    var pct = height > 0 ? scrollTop / height : 0;
+    progress.style.transform = 'scaleX(' + pct + ')';
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+    var revealEls = document.querySelectorAll('[data-reveal]');
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var delay = entry.target.getAttribute('data-delay') || 0;
+          entry.target.style.transitionDelay = delay + 'ms';
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'none';
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(function(el) {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(40px)';
+      el.style.transition = 'opacity .8s ease, transform .8s ease';
+      io.observe(el);
+    });
+  }
+</script>
+</body>
+</html>
