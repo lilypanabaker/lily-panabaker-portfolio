@@ -23,6 +23,22 @@
     #lp-progress { animation: lp-grow linear both; animation-timeline: scroll(root); }
   }
   .exp-logo { width: 50px; height: 50px; display: block; margin-bottom: 16px; border-radius: 11px; object-fit: cover; background: rgba(255,133,181,.12); }
+
+  @media (max-width: 700px) {
+    .sec-pad { padding-top: 56px !important; padding-bottom: 48px !important; padding-left: 20px !important; padding-right: 20px !important; }
+    .nav-inner { padding-left: 18px !important; padding-right: 18px !important; }
+    .nav-links { gap: 12px !important; font-size: 10px !important; letter-spacing: .08em !important; }
+    .hero-tags { gap: 8px 14px !important; font-size: 10.5px !important; letter-spacing: .12em !important; }
+    .about-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+    .about-grid > div:first-child { max-width: 280px; margin: 0 auto; }
+    .skills-grid { grid-template-columns: 1fr !important; }
+    .skill-item { padding: 24px 0 !important; border-left: none !important; }
+    .skill-item-r { border-left: none !important; }
+    .exp-row { grid-template-columns: 1fr !important; gap: 14px !important; }
+    .exp-row > div:first-child { display: flex !important; align-items: center !important; gap: 12px !important; }
+    .exp-row > div:first-child .exp-logo { margin-bottom: 0 !important; flex: none; }
+    .edu-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
+  }
 </style>
 </head>
 <body>
@@ -33,11 +49,11 @@
 
   <!-- ===== NAV / MASTHEAD ===== -->
   <div style="position:sticky;top:0;z-index:90;background:rgba(60,10,29,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,133,181,.35)">
-    <div style="max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 32px">
-      <div style="display:flex;align-items:baseline;gap:14px;cursor:pointer" onclick="goTop()">
+    <div class="nav-inner" style="max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 32px">
+      <div style="display:flex;align-items:baseline;gap:14px;cursor:pointer;flex:none" onclick="goTop()">
         <span style="font-family:'Playfair Display',serif;font-weight:800;font-size:24px;color:#ffeaf2;letter-spacing:.02em">LP</span>
       </div>
-      <div style="display:flex;gap:30px;font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#e7b9cb">
+      <div class="nav-links" style="display:flex;gap:30px;font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#e7b9cb">
         <span style="cursor:pointer" onclick="goAbout()">About</span>
         <span style="cursor:pointer" onclick="goSkills()">Skills</span>
         <span style="cursor:pointer" onclick="goExp()">Experience</span>
@@ -51,7 +67,7 @@
     <div style="position:relative;z-index:1;padding:64px 0 28px;text-align:center">
       <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(17px,2.2vw,22px);color:#ff9cc2;animation:lp-rise .8s ease both">the portfolio of</div>
       <h1 style="font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(64px,13vw,168px);line-height:.9;letter-spacing:-.01em;margin:10px 0 0;color:#ffeaf2;animation:lp-rise .9s ease .08s both">Lily<br>Panabaker</h1>
-      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-top:30px;font-family:'Space Grotesk',sans-serif;font-size:clamp(11px,1.3vw,13px);letter-spacing:.18em;text-transform:uppercase;color:#e7b9cb;font-weight:600;animation:lp-rise .9s ease .16s both">
+      <div class="hero-tags" style="display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-top:30px;font-family:'Space Grotesk',sans-serif;font-size:clamp(11px,1.3vw,13px);letter-spacing:.18em;text-transform:uppercase;color:#e7b9cb;font-weight:600;animation:lp-rise .9s ease .16s both">
         <span>Product Marketing</span><span style="color:#ff85b5">✦</span><span>Storyteller</span><span style="color:#ff85b5">✦</span><span>Insight-led</span>
       </div>
       <div style="margin-top:40px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;font-family:'Space Grotesk',sans-serif;animation:lp-rise .9s ease .24s both">
@@ -70,13 +86,13 @@
   </div>
 
   <!-- ===== ABOUT ===== -->
-  <section id="about" style="max-width:1180px;margin:0 auto;padding:96px 32px 80px">
+  <section id="about" class="sec-pad" style="max-width:1180px;margin:0 auto;padding:96px 32px 80px">
     <div data-reveal="" style="display:flex;align-items:baseline;gap:18px;margin-bottom:48px">
       <span style="font-family:'Space Grotesk',sans-serif;font-size:13px;letter-spacing:.2em;color:#ff85b5;font-weight:600">I</span>
       <span style="height:1px;flex:1;background:rgba(255,133,181,.35)"></span>
       <h2 style="font-family:'Space Grotesk',sans-serif;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#e7b9cb;font-weight:600;margin:0">About</h2>
     </div>
-    <div style="display:grid;grid-template-columns:0.82fr 1.18fr;gap:56px;align-items:start">
+    <div class="about-grid" style="display:grid;grid-template-columns:0.82fr 1.18fr;gap:56px;align-items:start">
       <!-- portrait -->
       <div data-reveal="" style="">
         <div style="border-radius:200px 200px 14px 14px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.4);border:1px solid rgba(255,133,181,.3)">
@@ -104,7 +120,7 @@
 
   <!-- ===== SKILLS ===== -->
   <section id="skills" style="background:#430c20;border-top:1px solid rgba(255,133,181,.25);border-bottom:1px solid rgba(255,133,181,.25)">
-    <div style="max-width:1180px;margin:0 auto;padding:96px 32px">
+    <div class="sec-pad" style="max-width:1180px;margin:0 auto;padding:96px 32px">
       <div data-reveal="" style="display:flex;align-items:baseline;gap:18px;margin-bottom:14px">
         <span style="font-family:'Space Grotesk',sans-serif;font-size:13px;letter-spacing:.2em;color:#ff85b5;font-weight:600">II</span>
         <span style="height:1px;flex:1;background:rgba(255,133,181,.35)"></span>
@@ -112,23 +128,23 @@
       </div>
       <h3 data-reveal="" style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(34px,5.2vw,62px);color:#ffeaf2;margin:0 0 48px;max-width:900px;line-height:1.02;text-wrap:balance">What I bring to a <span style="display:block;font-style:italic;font-weight:500;color:#ff9cc2;font-size:1.16em">marketing team</span></h3>
 
-      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0">
-        <div data-reveal="" style="border-top:1px solid rgba(255,133,181,.3);padding:28px 36px 36px 0">
+      <div class="skills-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:0">
+        <div data-reveal="" class="skill-item" style="border-top:1px solid rgba(255,133,181,.3);padding:28px 36px 36px 0">
           <div style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.16em;color:#ff85b5;font-weight:600;margin-bottom:10px">01</div>
           <div style="font-family:'Playfair Display',serif;font-size:26px;font-weight:600;color:#ffeaf2;margin-bottom:12px">Storytelling</div>
           <p style="font-size:15.5px;line-height:1.6;color:#d99bb0;margin:0">Shaping messaging &amp; positioning frameworks, content creation, and social media strategy into narratives that connect and convert.</p>
         </div>
-        <div data-reveal="" data-delay="100" style="border-top:1px solid rgba(255,133,181,.3);padding:28px 0 36px 36px;border-left:1px solid rgba(255,133,181,.3)">
+        <div data-reveal="" data-delay="100" class="skill-item skill-item-r" style="border-top:1px solid rgba(255,133,181,.3);padding:28px 0 36px 36px;border-left:1px solid rgba(255,133,181,.3)">
           <div style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.16em;color:#ff85b5;font-weight:600;margin-bottom:10px">02</div>
           <div style="font-family:'Playfair Display',serif;font-size:26px;font-weight:600;color:#ffeaf2;margin-bottom:12px">Customer-Informed Insights</div>
           <p style="font-size:15.5px;line-height:1.6;color:#d99bb0;margin:0">Grounding strategy in what customers actually want through market research and analysis, active listening, and SEO.</p>
         </div>
-        <div data-reveal="" style="border-top:1px solid rgba(255,133,181,.3);padding:28px 36px 36px 0">
+        <div data-reveal="" class="skill-item" style="border-top:1px solid rgba(255,133,181,.3);padding:28px 36px 36px 0">
           <div style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.16em;color:#ff85b5;font-weight:600;margin-bottom:10px">03</div>
           <div style="font-family:'Playfair Display',serif;font-size:26px;font-weight:600;color:#ffeaf2;margin-bottom:12px">Technical Depth</div>
           <p style="font-size:15.5px;line-height:1.6;color:#d99bb0;margin:0">Experience marketing technical products to technical audiences, using the precise language required to translate complexity into clear value.</p>
         </div>
-        <div data-reveal="" data-delay="100" style="border-top:1px solid rgba(255,133,181,.3);padding:28px 0 36px 36px;border-left:1px solid rgba(255,133,181,.3)">
+        <div data-reveal="" data-delay="100" class="skill-item skill-item-r" style="border-top:1px solid rgba(255,133,181,.3);padding:28px 0 36px 36px;border-left:1px solid rgba(255,133,181,.3)">
           <div style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.16em;color:#ff85b5;font-weight:600;margin-bottom:10px">04</div>
           <div style="font-family:'Playfair Display',serif;font-size:26px;font-weight:600;color:#ffeaf2;margin-bottom:12px">Collaboration</div>
           <p style="font-size:15.5px;line-height:1.6;color:#d99bb0;margin:0">Cross-team coordination, stakeholder communication, and rapport building across marketing, sales, design &amp; product.</p>
@@ -170,7 +186,7 @@
   </div>
 
   <!-- ===== EXPERIENCE / SELECTED WORK ===== -->
-  <section id="experience" style="max-width: 1180px; margin: 0 auto; padding: 96px 32px 80px">
+  <section id="experience" class="sec-pad" style="max-width: 1180px; margin: 0 auto; padding: 96px 32px 80px">
     <div data-reveal="" style="display:flex;align-items:baseline;gap:18px;margin-bottom:56px">
       <span style="font-family:'Space Grotesk',sans-serif;font-size:13px;letter-spacing:.2em;color:#ff85b5;font-weight:600">III</span>
       <span style="height:1px;flex:1;background:rgba(255,133,181,.35)"></span>
@@ -184,7 +200,7 @@
 
     <div style="display:flex;flex-direction:column">
       <!-- Crusoe -->
-      <div data-reveal="" style="display:grid;grid-template-columns:0.42fr 1.58fr;gap:40px;padding:34px 0;border-top:1px solid rgba(255,133,181,.3)">
+      <div data-reveal="" class="exp-row" style="display:grid;grid-template-columns:0.42fr 1.58fr;gap:40px;padding:34px 0;border-top:1px solid rgba(255,133,181,.3)">
         <div>
           <img class="exp-logo" src="assets/experience/crusoe.webp" alt="Crusoe logo">
           <div style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#ff85b5;font-weight:600">May 2026 – Present</div>
@@ -202,7 +218,7 @@
         </div>
       </div>
       <!-- GitHub -->
-      <div data-reveal="" style="display:grid;grid-template-columns:0.42fr 1.58fr;gap:40px;padding:34px 0;border-top:1px solid rgba(255,133,181,.3)">
+      <div data-reveal="" class="exp-row" style="display:grid;grid-template-columns:0.42fr 1.58fr;gap:40px;padding:34px 0;border-top:1px solid rgba(255,133,181,.3)">
         <div>
           <img class="exp-logo" src="assets/experience/github.webp" alt="GitHub logo">
           <div style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#ff85b5;font-weight:600">May – Aug 2025</div>
@@ -220,7 +236,7 @@
         </div>
       </div>
       <!-- Pepperdine -->
-      <div data-reveal="" style="display:grid;grid-template-columns:0.42fr 1.58fr;gap:40px;padding:34px 0;border-top:1px solid rgba(255,133,181,.3)">
+      <div data-reveal="" class="exp-row" style="display:grid;grid-template-columns:0.42fr 1.58fr;gap:40px;padding:34px 0;border-top:1px solid rgba(255,133,181,.3)">
         <div>
           <img class="exp-logo" src="assets/experience/pepperdine.webp" alt="Pepperdine logo">
           <div style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#ff85b5;font-weight:600">Sep 2024 – Apr 2025</div>
@@ -237,7 +253,7 @@
         </div>
       </div>
       <!-- Zocks -->
-      <div data-reveal="" style="display:grid;grid-template-columns:0.42fr 1.58fr;gap:40px;padding:34px 0;border-top:1px solid rgba(255,133,181,.3)">
+      <div data-reveal="" class="exp-row" style="display:grid;grid-template-columns:0.42fr 1.58fr;gap:40px;padding:34px 0;border-top:1px solid rgba(255,133,181,.3)">
         <div>
           <img class="exp-logo" src="assets/experience/zocks.webp" alt="Zocks logo">
           <div style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#ff85b5;font-weight:600">May – Aug 2024</div>
@@ -254,7 +270,7 @@
         </div>
       </div>
       <!-- Rachel Davis -->
-      <div data-reveal="" style="display:grid;grid-template-columns:0.42fr 1.58fr;gap:40px;padding:34px 0;border-top:1px solid rgba(255,133,181,.3)">
+      <div data-reveal="" class="exp-row" style="display:grid;grid-template-columns:0.42fr 1.58fr;gap:40px;padding:34px 0;border-top:1px solid rgba(255,133,181,.3)">
         <div>
           <img class="exp-logo" src="assets/experience/racheldavis.webp" alt="Rachel Davis Photography logo">
           <div style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#ff85b5;font-weight:600">Sep 2022 – May 2023</div>
@@ -275,7 +291,7 @@
     <div data-reveal="" style="margin-top:48px;display:flex;justify-content:center">
       <div style="background:#430c20;border:1px solid rgba(255,133,181,.25);border-radius:14px;padding:34px 40px;max-width:780px;width:100%">
         <div style="font-family:'Space Grotesk',sans-serif;font-size:22px;letter-spacing:.16em;text-transform:uppercase;color:#ff85b5;font-weight:700;margin-bottom:24px;text-align:center">Education</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px">
+        <div class="edu-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:30px">
           <div>
             <div style="font-family:'Playfair Display',serif;font-size:21px;font-weight:600;color:#ffeaf2">Boise State University</div>
             <div style="font-size:14px;color:#ff9cc2;margin-top:3px">BBA, Marketing &amp; Product Management</div>
@@ -294,7 +310,7 @@
   </section>
 
   <!-- ===== CONTACT / FOOTER ===== -->
-  <section id="contact" style="max-width:1180px;margin:0 auto;padding:110px 32px 70px;text-align:center">
+  <section id="contact" class="sec-pad" style="max-width:1180px;margin:0 auto;padding:110px 32px 70px;text-align:center">
     <div data-reveal="" style="">
       <div style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#ff85b5;font-weight:600;margin-bottom:18px">Let's work together</div>
       <h2 style="font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:clamp(48px,9vw,108px);line-height:.95;color:#ffeaf2;margin:0">Say hello!</h2>
